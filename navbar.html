@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        .navbar{
+            background: red;
+            height: 70px;
+            width: 100pvw;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 12px;
+        }
+        img{
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            border: 3px solid white;
+        }
+        .links{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            gap: 20px;
+        }
+        a{
+            color: white;
+            text-decoration: none;
+        }
+        .search input{
+            height: 30px;
+            width: 400px;
+            border-radius: 5px;
+            outline: none;
+            border: 3px solid white;
+            border: none;
+        }
+        .container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background-color: rgb(83, 83, 188);
+            height: 513px;
+            width: 100vw;
+        }
+        .box{
+            height: 360px;
+            width: 300px;
+            border-radius: 7px;
+            background: rgb(55, 55, 178);
+            padding:15px;
+            margin: 52px;
+            position: relative;
+        }
+        .box input{
+            width: 250px;
+            padding: 10px;
+            outline: none;
+            margin: 10px;
+            border-radius: 5px;
+        }
+        .box h2{
+            font-size: 30px;
+            text-align: center;
+            color: white;
+            padding: 12px;
+        }
+        .btn{
+            background-color: orange;
+            color: white;
+            border: none;
+        }
+        .box p{
+            font-size: 15px;
+            text-align: center;
+            color: white;
+            margin-bottom: 10px;
+        }
+        .signup{
+            color: orange;
+        }
+        .box a{
+            margin-left: 25px;
+        }
+        .icon{
+            height: 20px;
+            width: 20px;
+            position: absolute;
+            left: 265px;
+            top: 12px;
+        }
+        .condition{
+            position: absolute;
+            border: none;
+            border-radius: 5px;
+            height: 25px;
+            width: 280px;
+            padding: 5px;
+            background-color: gray;
+            bottom: 175px;
+            right: 19px;
+            visibility: hidden;
+        }
+        .lock{
+            height: 20px;
+            width: 25px;
+            position: absolute;
+            right: 30px;
+            bottom: 159px;
+        }
+        .lock:hover{
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="./img.jpg" alt="logo">
+        </div>
+        <div class="search">
+            <input type="text" placeholder="Search">
+        </div>
+        <div class="links">
+            <a href="">Home</a>
+            <a href="">Contact</a>
+            <a href="">Login</a>
+            <a href="">About</a>
+            <a href="">Account</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="box">
+            <h2>Welcome Back</h2>
+            <img src="cross.jpg" alt="cross" class="icon">
+            <p>Login to continue</p>
+            <input type="email" placeholder="Enter Email ID" required>
+            <input type="password" placeholder="Enter Password" required>
+            <input type="button" value="Submit" class="btn">
+            <p class="condition">Password must be minimum of 8 length</p>
+            <img src="lock2.png" alt="lock" class="lock">
+            <p>Forgot Password</p>
+            <a>Don't have account?<span class="signup">Sign Up</span></a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

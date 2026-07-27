@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>To Do List</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:linear-gradient(135deg,#667eea,#764ba2);
+    height:100vh;
+    width:100vw;
+}
+
+.bigdiv{
+    background:white;
+    width:650px;
+    min-height:700px;
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    border-radius:20px;
+    box-shadow:0 15px 35px rgba(0,0,0,0.3);
+}
+
+.heading{
+    display:flex;
+    justify-content:center;
+    margin-top:50px;
+}
+
+.h1{
+    font-size:40px;
+    font-family:'Times New Roman', Times, serif;
+}
+
+.input{
+    position:absolute;
+    top:140px;
+    left:70px;
+}
+
+.input input{
+    width:450px;
+    height:45px;
+    font-size:16px;
+    padding-left:10px;
+}
+
+.submit{
+    position:absolute;
+    top:140px;
+    left:540px;
+    width:90px;
+    height:45px;
+    cursor:pointer;
+}
+.container{
+    width:100%;
+    height:385px;
+    background:#fafafa;
+    position:absolute;
+    left:0;
+    top:300px;
+    overflow-y:auto;
+    padding:15px;
+    border-bottom-left-radius:20px;
+    border-bottom-right-radius:20px;
+}
+
+.todo-item{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background:#f3f3f3;
+    padding:12px;
+    margin-bottom:12px;
+    border-radius:10px;
+    transition:0.3s;
+}
+
+.todo-item:hover{
+    transform:translateY(-2px);
+    box-shadow:0 5px 12px rgba(0,0,0,0.2);
+}
+
+.todo-item p{
+    font-size:18px;
+    margin-right:420px;
+}
+
+.add{
+    background:#28a745;
+    color:white;
+    border:none;
+    padding:8px 15px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.edit{
+    background:#ffc107;
+    color:black;
+    border:none;
+    padding:8px 15px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.delete{
+    background:#dc3545;
+    color:white;
+    border:none;
+    padding:8px 15px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.add:hover,
+.edit:hover,
+.delete:hover{
+    opacity:0.85;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="bigdiv">
+
+    <div class="heading">
+        <h1 class="h1">To do List</h1>
+    </div>
+
+    <div class="input">
+        <input type="text" placeholder="Enter Task">
+    </div>
+
+    <input type="submit" class="submit" value="Add">
+
+    <div class="container"></div>
+
+</div> 
+
+<script>
+
+const todos=[];
+const todoinput=document.querySelector(".input input");
+const addbtn=document.querySelector(".submit");
+const todolist=document.querySelector(".container");
+
+
+function rendertask(task){
+
+    const todoitem=document.createElement("div");   
+    todoitem.classList.add("todo-item");
+
+
+    const p=document.createElement("p");
+    p.textContent=task;
+
+
+    const done=document.createElement("button");
+    done.textContent="Complete";
+    done.classList.add("add");
+
+
+    const deletebtn=document.createElement("button");
+    deletebtn.textContent="Delete";
+    deletebtn.classList.add("delete");
+   
+    const editbtn=document.createElement("button");
+    editbtn.textContent="Edit";
+    editbtn.classList.add("edit");
+
+
+    deletebtn.addEventListener("click",function(){
+
+        const index=todos.indexOf(task);
+
+        if(index!==-1){
+
+            todos.splice(index,1);
+
+            // updating local storage
+            localStorage.setItem("todos",JSON.stringify(todos));
+
+        }
+        todoitem.remove();
+
+    });
+
+    done.addEventListener("click",function(){
+
+        todoitem.style.backgroundColor="green";
+
+
+        setTimeout(function(){
+
+            const index=todos.indexOf(task);
+
+            if(index!==-1){
+
+                todos.splice(index,1);
+
+                // updating local storage
+                localStorage.setItem("todos",JSON.stringify(todos));
+
+            }
+
+            todoitem.remove();
+
+
+        },3000)
+
+    })
+
+editbtn.addEventListener("click",function(){
+
+    const newtask=prompt("Edit your task",task);
+
+    if(newtask!==null && newtask.trim()!==""){
+
+        p.textContent=newtask;
+
+        const index=todos.indexOf(task);
+
+        if(index!==-1){
+            todos[index]=newtask;
+            localStorage.setItem("todos",JSON.stringify(todos));
+
+        }
+
+    }
+
+});
+
+todoitem.append(p,done,editbtn,deletebtn);
+
+    todolist.prepend(todoitem);
+
+}
+
+function addtodo(){
+
+    const task=todoinput.value.trim();
+
+    if(task===""){
+        return;
+    }
+
+    todos.unshift(task);
+
+    // storing data in local storage
+    localStorage.setItem("todos",JSON.stringify(todos));
+
+    rendertask(task);
+
+    todoinput.value="";
+    todoinput.focus();
+
+}
+
+addbtn.addEventListener("click",addtodo);
+
+todoinput.addEventListener("keydown",function(e){
+
+    if(e.key==="Enter"){
+        addtodo();
+    }
+
+});
+</script>
+</body>
+</html> 

@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#todo{
+    margin: 10px;
+    padding: 5px;
+}
+#todoList{
+    height: 300px;
+    width: 300px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 5px;
+}

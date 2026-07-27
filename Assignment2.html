@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Assignment 2</title>
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#74ebd5,#9face6);
+}
+.meme{
+    width:550px;
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+.meme:hover{
+    transform:scale(1.03);
+}
+.section{
+    padding:20px;
+    text-align:center;
+    border-bottom:1px solid #ddd;
+}
+.section:last-child{
+    border-bottom:none;
+}
+.teacher{
+    background:#ffe8a3;
+}
+.student{
+    background:#d4f8d4;
+}
+.chatgpt{
+    background:#dceeff;
+}
+h2{
+    margin-bottom:10px;
+    color:#333;
+}
+p{
+    font-size:20px;
+    font-weight:bold;
+    color:#444;
+}
+.emoji{
+    font-size:55px;
+    margin-top:10px;
+}
+</style>
+</head>
+
+<body>
+<div class="meme">
+    <div class="section teacher">
+        <h2>👨‍🏫 Teacher</h2>
+        <p>"Did everyone write the code yourself?"</p>
+    </div>
+    <div class="section student">
+        <h2>👨‍🎓 Entire Class</h2>
+        <div class="emoji">👀 👀 👀 👀</div>
+    </div>
+    <div class="section chatgpt">
+        <h2>🤖 ChatGPT</h2>
+        <div class="emoji">🙂</div>
+    </div>
+</div>
+</body>
+</html>
