@@ -1,0 +1,42 @@
+# Components ->
+(1) Functional Components -> Hooks
+(2) Class-based Components(Old Method)
+
+# jsx -> JavaScript XML
+allow use html and js together
+
+# Element -> opening tag + content + closing tag
+
+# HTML ke ander js likhi h to {} brackets use hongi.
+
+# Rules -->
+(1) Components name first letter always uppercase.
+(2) Function name and file name always same.
+(3) Function hmesha return 1 element ko karta h.
+Solution -> <div></div>(block level element), <></>(mostly used)
+
+# class -> className (use hota react ma)
+# All keywords are in camelCase.
+
+# We can't use statements - while, for, if-else etc in react.
+# We can use ternary operator, &&(and), ||(or) etc in react.
+
+# map, reduce, filter bhi use kr sakte h.
+
+# style={{color: "red"}} -> use {{}} for css.
+-> Inline css in react act as a object(key-value).
+
+(1) outer {} -> jsx ma likh rahe h ise liya because object js ka part hi h.
+(2) inner {} -> object
+
+# {/* */} -> Comments in react, why {} comments bhi javascript ka part hi h.
+
+Flow - main.jsx (entry point) -> App.jsx (baaki sab iske ander honge)
+App component -> root component
+
+Always use keys in map while traversing in the array.
+
+Props se data parents to child me send hota h.
+
+# Prop drilling -> 1 prop ko 1 jagha se dusri jagha and vaha se third jagha pr and so on....
+
