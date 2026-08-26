@@ -4,6 +4,7 @@ import cross from './assets/cross.jpg'
 import ProductCard from './components/ProductCard';
 import Box from './components/Box';
 import Counter from './components/Counter';
+import Form from './components/Form';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -71,7 +72,8 @@ function App() {
       <br />
       <ProductCard name="Iphone" description="Iphone is the best phone" price={90000} available={false}/> */}
     {/* <Box /> */}
-    <Counter />                      
+    {/* <Counter />*/}
+    <Form />
     </>
   )
 }

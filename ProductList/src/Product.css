@@ -1,0 +1,72 @@
+.app {
+  padding: 30px;
+  min-height: 100vh;
+  background-color: lightblue;
+  color: black;
+}
+
+.dark {
+  background-color: #222;
+  color: white;
+}
+
+.app > input {
+  padding: 10px;
+  width: 250px;
+}
+
+button {
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.categories {
+  margin: 20px 0;
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 35px;
+}
+
+.product-card {
+  width: 220px;
+  padding: 25px;
+  border: 1px solid black;
+}
+
+.product-card img {
+  width: 240px;
+  height: 180px;
+  object-fit: contain;
+}
+
+.product-card h2 {
+  font-size: 22px;
+}
+
+.product-card h3 {
+  font-size: 20px;
+}
+
+.product-card p {
+  font-size: 14px;
+}
+
+.available {
+  color: green;
+}
+
+.out-of-stock {
+  color: red;
+}
+
+.product-card button {
+  width: 100%;
+}
+
+.product-card button:disabled {
+  cursor: not-allowed;
+}

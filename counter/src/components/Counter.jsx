@@ -18,6 +18,13 @@ function Counter() {
         setFruit([...fruit,"orange"]);
     }
 
+    const product = [
+    { name: "Laptop", price: 75000, category: "electronics" },
+    { name: "Headphones", price: 5000, category: "audio" },
+    { name: "Keyboard", price: 3000, category: "accessories" },
+    { name: "Smartwatch", price: 12000, category: "wearable" }
+];
+
   return (
     <>
         <h1>{count}</h1>
@@ -31,8 +38,12 @@ function Counter() {
         })}
         </ul>
         <button onClick={handleFruit} style={{width:"100px", marginLeft:"45%"}}>Add Fruits</button>
-
-        
+        {/* Chaining of filtet and then map */}
+        {
+            product.filter((prod) => prod.price >= 12000).map((prod) => {
+                return <p>{prod.name}</p>
+            })
+        } 
     </>
   )
 }
