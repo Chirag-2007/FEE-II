@@ -40,3 +40,30 @@ Props se data parents to child me send hota h.
 
 # Prop drilling -> 1 prop ko 1 jagha se dusri jagha and vaha se third jagha pr and so on....
 
+# useEffect hook: side-effect work part.
+-> callback func + dependency array (kise pr depend kr raha h re-render ke time)
+-> [] blank array means only 1st render pr load hoga.
+-> API call, backend system se interact krne ma use hoga useEffect hook.
+
+# useRef hook:
+-> Example: to check how many times component re-render hua h.
+-> Simple variable ke case ma re-initialised ho jata h but hooks ke case ma vo re-initialised nhi hoti.
+-> value ko persist krke rakhta h.
+
+useState: jb bhi state change hoti h to re-render krta h.
+useRef: jb bhi useRef wala variable change hota h to component re-render nhi hota h.
+
+# useRef: ko access krne ke liya .current use hota h.
+
+# React Router DOM: to navigate components without reloading.
+-> We never use a tag (anchor tag) in react.
+-> We use Link tag to navigate in react.
+-> We have to wrap the component with the Broswer Router.
+
+# Routes and Route:
+-> Routes are used to do the mapping.
+
+# path='/products/:id' -> :id se id dynamic bane jati h.
+
+# useParams:
+-> Browser se koi bhi url id ko fetch krne ke liya.

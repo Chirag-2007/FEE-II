@@ -5,6 +5,14 @@ import ProductCard from './components/ProductCard';
 import Box from './components/Box';
 import Counter from './components/Counter';
 import Form from './components/Form';
+import Hooks from './components/Hooks';
+import Navbar from './components/Navbar';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './components/Home';
+import About from './components/About';
+import Products from './components/Products';
+import Login from './components/Login';
+import ProductDetails from './components/ProductDetails';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -73,7 +81,19 @@ function App() {
       <ProductCard name="Iphone" description="Iphone is the best phone" price={90000} available={false}/> */}
     {/* <Box /> */}
     {/* <Counter />*/}
-    <Form />
+    {/* <Form /> */}
+    {/* <Hooks /> */}
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+          <Route path='/' element={<Home/>} />
+          <Route path='/about' element={<About/>} />
+          <Route path='/products' element={<Products/>} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/products/:id' element={<ProductDetails />} />
+      </Routes>
+    </BrowserRouter>
+
     </>
   )
 }
