@@ -1,0 +1,248 @@
+.manage-jobs {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.manage-jobs .manage-jobs-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.manage-jobs .manage-jobs-header h1 {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 4px;
+}
+
+.manage-jobs .manage-jobs-header p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.manage-jobs .manage-jobs-filters {
+  display: flex;
+  gap: 8px;
+}
+
+.manage-jobs .mj-filter {
+  padding: 6px 18px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.manage-jobs .mj-filter.active {
+  background-color: var(--accent-soft);
+  color: var(--accent);
+  border-color: var(--accent);
+  font-weight: 600;
+}
+
+.manage-jobs .mj-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.manage-jobs .mj-card {
+  padding: 20px 22px;
+}
+
+.manage-jobs .mj-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.manage-jobs .mj-card-top h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 4px;
+}
+
+.manage-jobs .mj-meta {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.manage-jobs .mj-card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+
+.manage-jobs .mj-applicant-count {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.manage-jobs .mj-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.manage-jobs .mj-empty {
+  text-align: center;
+  padding: 48px 20px;
+  color: var(--text-muted);
+  border: 1px dashed var(--border);
+}
+
+/* ========== STATUS BADGES ========== */
+.manage-jobs .mj-status {
+  padding: 3px 12px;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+
+.manage-jobs .mj-status-active { background-color: var(--success-soft); color: var(--success); }
+.manage-jobs .mj-status-closed { background-color: var(--danger-soft); color: var(--danger); }
+.manage-jobs .mj-status-applied { background-color: var(--bg-hover); color: var(--text); }
+.manage-jobs .mj-status-shortlisted { background-color: var(--accent-soft); color: var(--accent); }
+.manage-jobs .mj-status-rejected { background-color: var(--danger-soft); color: var(--danger); }
+
+/* ========== MODAL ========== */
+.manage-jobs .mj-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.manage-jobs .mj-modal {
+  max-width: 520px;
+  width: 100%;
+  max-height: 80vh;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.manage-jobs .mj-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 16px;
+}
+
+.manage-jobs .mj-modal-header h2 {
+  font-size: 1.15rem;
+  color: var(--text);
+  margin: 0 0 4px;
+}
+
+.manage-jobs .mj-modal-close {
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.manage-jobs .mj-modal-close:hover {
+  background-color: var(--accent-soft);
+  color: var(--text);
+}
+
+.manage-jobs .mj-applicant-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+}
+
+.manage-jobs .mj-applicant {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 12px 14px;
+  background-color: var(--bg);
+  border-radius: 10px;
+}
+
+.manage-jobs .mj-applicant h4 {
+  font-size: 0.9rem;
+  color: var(--text);
+  margin: 0 0 2px;
+}
+
+.manage-jobs .mj-applicant-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.manage-jobs .mj-small-btn {
+  padding: 4px 12px;
+  font-size: 0.75rem;
+}
+
+.manage-jobs .mj-small-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.manage-jobs .mj-empty-applicants {
+  text-align: center;
+  padding: 24px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.manage-jobs .mj-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 16px;
+  margin-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 600px) {
+  .manage-jobs { padding: 16px; }
+  .manage-jobs .manage-jobs-header { flex-direction: column; align-items: flex-start; }
+  .manage-jobs .mj-card-bottom { flex-direction: column; align-items: flex-start; }
+  .manage-jobs .mj-actions { width: 100%; }
+  .manage-jobs .mj-actions .btn { flex: 1; }
+  .manage-jobs .mj-applicant { flex-direction: column; align-items: flex-start; }
+}

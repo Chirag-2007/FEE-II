@@ -1,0 +1,247 @@
+/* ========== PAGE ========== */
+.login-page {
+  height: calc(100vh - var(--navbar-height));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 420px;
+}
+
+/* ========== LOGIN BOX ========== */
+/* .card (from index.css) already gives background/border/radius/shadow */
+.login-box {
+  padding: 2rem;
+  border-radius: 24px;
+}
+
+/* ========== HEADER ========== */
+.login-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.login-header h1 {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0 0 0.3rem;
+  color: var(--text);
+}
+
+.login-header p {
+  color: var(--text-muted);
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* ========== FORM ========== */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.form-group label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* ========== INPUTS ========== */
+.input-wrapper {
+  position: relative;
+}
+
+.input-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.9rem;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.input-wrapper input {
+  width: 100%;
+  padding: 0.7rem 3rem 0.7rem 3rem;
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  background-color: var(--bg);
+  color: var(--text);
+  font-size: 0.9rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
+}
+
+.input-wrapper input[type="email"],
+.input-wrapper input[type="password"],
+.input-wrapper input[type="text"] {
+  padding-left: 3rem;
+}
+
+.input-wrapper input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-soft);
+}
+
+.input-wrapper input.error {
+  border-color: var(--danger);
+}
+
+.input-wrapper input.error:focus {
+  box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.1);
+}
+
+/* ========== ROLE BUTTONS ========== */
+.role-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.role-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px;
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  background-color: var(--bg);
+  color: var(--text);
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.role-btn:hover {
+  border-color: var(--text-muted);
+  transform: translateY(-1px);
+}
+
+.role-btn.active {
+  border-color: var(--accent);
+  background-color: var(--accent-soft);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.role-icon {
+  font-size: 1.2rem;
+}
+
+/* ========== TOGGLE PASSWORD ========== */
+.toggle-password {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent);
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: color 0.2s ease, background-color 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.toggle-password:hover {
+  color: var(--accent-hover);
+  background-color: var(--accent-soft);
+}
+
+/* ========== ERROR ========== */
+.error-text {
+  font-size: 0.75rem;
+  color: var(--danger);
+  animation: shake 0.4s ease;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  75% { transform: translateX(6px); }
+}
+
+/* ========== BUTTON ========== */
+/* .btn.btn-primary (from index.css) gives padding/radius/color already */
+.login-btn {
+  width: 100%;
+  margin-top: 0.2rem;
+}
+
+/* ========== FOOTER ========== */
+.login-footer {
+  text-align: center;
+  margin-top: 1.2rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--border);
+}
+
+.login-footer p {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.login-footer a {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.login-footer a:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .login-box { padding: 1.75rem 1.5rem; }
+  .login-header h1 { font-size: 1.5rem; }
+}
+
+@media (max-width: 480px) {
+  .login-page { padding: 1rem; }
+  .login-box { padding: 1.5rem 1rem; border-radius: 16px; }
+  .login-header h1 { font-size: 1.3rem; }
+  .login-header p { font-size: 0.8rem; }
+  .login-header { margin-bottom: 1.2rem; }
+  .input-wrapper input { padding: 0.6rem 2.8rem 0.6rem 2.8rem; font-size: 0.85rem; }
+  .input-wrapper input[type="email"],
+  .input-wrapper input[type="password"],
+  .input-wrapper input[type="text"] {
+    padding-left: 2.8rem;
+  }
+  .role-btn { padding: 8px; font-size: 0.8rem; }
+  .role-icon { font-size: 1.1rem; }
+  .login-footer p { font-size: 0.8rem; }
+  form { gap: 0.8rem; }
+  .form-group { gap: 0.2rem; }
+}
+
+@media (max-width: 360px) {
+  .login-box { padding: 1.25rem 0.75rem; }
+  .login-header h1 { font-size: 1.1rem; }
+  .input-wrapper input { padding: 0.5rem 2.5rem 0.5rem 2.5rem; font-size: 0.8rem; }
+  .input-wrapper input[type="email"],
+  .input-wrapper input[type="password"],
+  .input-wrapper input[type="text"] {
+    padding-left: 2.5rem;
+  }
+  .role-btn { padding: 6px; font-size: 0.75rem; }
+  .role-icon { font-size: 1rem; }
+}

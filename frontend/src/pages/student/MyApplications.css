@@ -1,0 +1,401 @@
+/* ========== CONTAINER ========== */
+.my-applications {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 2rem;
+}
+
+.my-applications .page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.my-applications .page-header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 4px 0;
+  letter-spacing: -0.5px;
+}
+
+.my-applications .page-header p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.my-applications .header-stats {
+  display: flex;
+  gap: 20px;
+  padding: 12px 24px;
+}
+
+/* Scoped under .my-applications */
+.my-applications .stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.my-applications .stat-item:not(:last-child) {
+  padding-right: 20px;
+  border-right: 1px solid var(--border);
+}
+
+.my-applications .stat-number {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+.my-applications .stat-label {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.my-applications .filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.my-applications .filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.my-applications .filter-btn {
+  padding: 6px 18px;
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.my-applications .filter-btn:hover {
+  border-color: var(--text-muted);
+  color: var(--text);
+}
+
+.my-applications .filter-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
+}
+
+.my-applications .results-count {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.my-applications .applications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.my-applications .application-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 22px;
+  transition: all 0.2s;
+}
+
+.my-applications .application-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+}
+
+.my-applications .app-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  width: 100%;
+}
+
+.my-applications .app-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--bg-hover);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  flex-shrink: 0;
+}
+
+.my-applications .app-title {
+  flex: 1;
+  min-width: 0;
+}
+
+.my-applications .app-title h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 2px 0;
+}
+
+.my-applications .app-title .company {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* STATUS BADGES */
+.my-applications .status-badge {
+  padding: 4px 14px;
+  border-radius: 100px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.my-applications .status-pending { background: var(--bg-hover); color: var(--text); }
+.my-applications .status-accent { background: var(--accent-soft); color: var(--accent); }
+.my-applications .status-success { background: var(--success-soft); color: var(--success); }
+.my-applications .status-danger { background: var(--danger-soft); color: var(--danger); }
+
+/* APP BODY */
+.my-applications .app-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.my-applications .app-meta {
+  display: flex;
+  gap: 20px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.my-applications .meta-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.my-applications .meta-icon {
+  font-size: 0.85rem;
+}
+
+.my-applications .app-progress {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.my-applications .progress-track {
+  flex: 1;
+  height: 4px;
+  background: var(--bg-hover);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.my-applications .progress-fill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.6s ease;
+}
+
+.my-applications .progress-fill.status-pending { background: var(--text-muted); }
+.my-applications .progress-fill.status-accent { background: var(--accent); }
+.my-applications .progress-fill.status-success { background: var(--success); }
+.my-applications .progress-fill.status-danger { background: var(--danger); }
+
+.my-applications .progress-label {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.my-applications .app-footer {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 12px;
+}
+
+.my-applications .app-footer button {
+  flex: 1;
+  white-space: nowrap;
+  padding: 0.6rem 0.5rem;
+  font-size: 0.85rem;
+}
+
+/* ========== EMPTY STATE ========== */
+.my-applications .empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 20px;
+  border: 1px dashed var(--border);
+}
+
+.my-applications .empty-icon {
+  font-size: 4rem;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.my-applications .empty-state h3 {
+  font-size: 1.3rem;
+  color: var(--text);
+  margin: 0 0 8px;
+}
+
+.my-applications .empty-state p {
+  color: var(--text-muted);
+  margin: 0 0 20px;
+}
+
+/* ========== MODAL ========== */
+.my-applications .modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.my-applications .modal-content {
+  padding: 32px;
+  max-width: 480px;
+  width: 100%;
+  animation: modalSlide 0.3s ease;
+}
+
+@keyframes modalSlide {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.my-applications .modal-close {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  float: right;
+  transition: 0.2s;
+}
+
+.my-applications .modal-close:hover { color: var(--text); }
+
+.my-applications .modal-logo { 
+  font-size: 3rem; 
+  text-align: center; 
+  margin: 8px 0 12px; 
+}
+
+.my-applications .modal-content h2 { 
+  font-size: 1.4rem; 
+  color: var(--text); 
+  text-align: center; 
+  margin: 0 0 4px; 
+}
+
+.my-applications .modal-company { 
+  color: var(--text-muted); 
+  text-align: center; 
+  margin: 0 0 20px; 
+}
+
+.my-applications .modal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  background: var(--bg-hover);
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+.my-applications .modal-label {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.my-applications .modal-value {
+  font-size: 0.9rem;
+  color: var(--text);
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+.my-applications .modal-notes {
+  background: var(--bg-hover);
+  padding: 14px 16px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.my-applications .modal-notes p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin: 4px 0 0;
+}
+
+.my-applications .modal-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.my-applications .modal-actions button {
+  flex: 1;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .my-applications .page-header { 
+    flex-direction: column; 
+    align-items: flex-start; 
+  }
+  .my-applications .header-stats { 
+    width: 100%; 
+    justify-content: space-around; 
+  }
+  .my-applications .stat-item:not(:last-child) { 
+    padding-right: 12px; 
+  }
+  .my-applications .filter-buttons { 
+    width: 100%; 
+    overflow-x: auto; 
+    flex-wrap: nowrap; 
+    padding-bottom: 4px; 
+  }
+  .my-applications .applications-grid { 
+    grid-template-columns: 1fr; 
+  }
+}

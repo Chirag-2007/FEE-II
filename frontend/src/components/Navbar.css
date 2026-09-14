@@ -1,0 +1,231 @@
+/* ========== NAVBAR ========== */
+.navbar {
+  height: var(--navbar-height);
+  border-bottom: 1px solid var(--border);
+  background-color: var(--bg);
+  backdrop-filter: blur(20px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* ========== LOGO ========== */
+.navbar-logo {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.logo-dot {
+  color: var(--accent);
+}
+
+/* ========== ACTIONS ========== */
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Theme Toggle */
+.theme-toggle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: transparent;
+  font-size: 1.2rem;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  color: var(--text);
+}
+
+.theme-toggle:hover {
+  background-color: var(--bg-hover);
+  transform: scale(1.05);
+}
+
+/* Buttons */
+.nav-btn {
+  padding: 9px 20px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-primary {
+  background: var(--gradient, var(--accent));
+  color: var(--text-on-accent);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.btn-secondary {
+  color: var(--text);
+  border: 1px solid var(--border);
+  background: transparent;
+}
+
+.btn-secondary:hover {
+  background-color: var(--bg-hover);
+}
+
+/* ========== HAMBURGER ========== */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  padding: 8px;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 24px;
+}
+
+.hamburger span {
+  display: block;
+  height: 2px;
+  background-color: var(--text);
+  border-radius: 2px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* ========== MOBILE MENU ========== */
+
+.mobile-overlay {
+  position: fixed;
+  inset: 0;
+  top: var(--navbar-height);
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+  z-index: 998;
+  animation: overlayFadeIn 0.2s ease;
+}
+
+@keyframes overlayFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: var(--navbar-height);
+  left: 0;
+  right: 0;
+  background-color: var(--bg);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  padding: 20px 0;
+  transform: translateY(-10px);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.2s ease, opacity 0.2s ease, visibility 0.2s ease;
+  /* ✅ Add z-index to ensure it's above content */
+  z-index: 999;
+  /* ✅ Add box shadow for depth */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.mobile-menu.open {
+  display: block;
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-menu .container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mobile-link {
+  padding: 14px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text);
+  transition: background-color 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.mobile-link:hover {
+  background-color: var(--bg-hover);
+}
+
+.mobile-link-primary {
+  background: var(--gradient, var(--accent));
+  color: var(--text-on-accent) !important;
+  font-weight: 600;
+}
+
+.mobile-link-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.navbar-greeting {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.mobile-greeting {
+  padding: 8px 14px;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  /* .navbar-actions .nav-btn (two classes) beats .btn (one class) on
+     specificity regardless of CSS load order — more reliable than !important. */
+  .navbar-actions .nav-btn {
+    display: none;
+  }
+  .menu-toggle {
+    display: flex;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-logo {
+    font-size: 1.2rem;
+  }
+  .theme-toggle {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+  .mobile-link {
+    padding: 12px;
+    font-size: 0.95rem;
+  }
+}

@@ -1,0 +1,121 @@
+.sidebar {
+  width: var(--sidebar-width);
+  height: 100vh;
+  background-color: var(--bg-card);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  transition: width 0.3s ease;
+  position: sticky;
+  top: 0;
+  overflow-x: hidden;
+}
+
+.sidebar.collapsed {
+  width: 72px;
+}
+
+.sidebar-header {
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.sidebar.collapsed .sidebar-header {
+  justify-content: center;
+  padding: 0;
+}
+
+.sidebar-logo {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.logo-dot {
+  color: var(--accent);
+}
+
+.collapse-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.4rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  padding: 4px;
+}
+
+.collapse-btn:hover {
+  color: var(--text);
+  background-color: var(--bg-hover);
+}
+
+.sidebar-nav {
+  flex: 1;
+  padding: 20px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 10px;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  background: transparent;
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.sidebar-link:hover {
+  background-color: var(--bg-hover);
+  color: var(--text);
+}
+
+/* React Router automatically applies the "active" class to NavLink */
+.sidebar-link.active {
+  background-color: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.link-icon {
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+}
+
+.sidebar-footer {
+  padding: 16px 12px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.logout-btn:hover {
+  color: var(--danger);
+  background-color: var(--danger-soft);
+}
