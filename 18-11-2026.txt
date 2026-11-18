@@ -1,0 +1,42 @@
+JS ,props, UI, web application forms, router, component, onSubmit, multipages, react, zustand, UX, map, filter, onClick, state, buttons, links, validation, CSS, function, function, global state, nested routers.
+
+
+JS
+function
+react
+components
+props
+state
+onClick
+buttons
+links
+map
+filter
+UI
+css
+web application forms
+validation
+onSubmit
+router
+multipage
+nested routers
+global state
+UX
+zustand
+
+# Important Topics
+
+JS -> JavaScript is a programming language that makes website interactive and allow us to add functionality to web applications.
+Logic: JavaScript controls the actions and functionality when users interact with the website.
+
+function -> A function is a block of reusable code that performs a particular task whenever call.
+Logic: We write the code once and use it whenever required.
+
+react -> React is a javascript library used to build interactive user interfaces by making the application into reusable components.
+Logic: Instead of managing the entire website manually, React updates the necessary parts of the UI when data changes.
+
+components -> Components are reusable building blocks of a React application, where each component handles a specific part of the user interface.
+Logic: We divide a large application into smaller pieces so that the code becomes easier to manage.
+
+props -> Props are used to pass data from a parent component to a child component in React.
+Logic: When different components need to display different information, the parent sends data through props instead of creating separate components for every situation.
